@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     echo 'Stopping existing Docker Compose services...'
-                    sh 'docker-compose down'
+                    sh 'docker compose down'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     echo 'Starting Docker Compose services...'
-                    sh 'docker-compose up -d --build'
+                    sh 'docker compose up -d --build'
                 }
             }
         }
