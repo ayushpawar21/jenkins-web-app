@@ -1,8 +1,9 @@
-version: '3'
 services:
-  echo-server:
-    image: ealen/echo-server:latest
-    environment:
-      - ENABLE__ENVIRONMENT=false
-    ports:
-      - 3000:80
+  web:
+    build:
+      context: app
+      target: builder
+    ports: 
+      - '8080:80'
+    volumes:
+      - ./app:/var/www/html/
