@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Bring down any existing Docker Compose setup
-                    sh 'docker-compose down'
+                    sh 'docker compose down'
                 }
             }
         }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Bring up the Docker Compose setup
-                    sh 'docker-compose up -d --build'
+                    sh 'docker compose up -d --build'
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     // Check the status of the Docker Compose services
-                    sh 'docker-compose ps'
+                    sh 'docker compose ps'
                 }
             }
         }
